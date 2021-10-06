@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Turnos.Models;
 
 namespace Turnos.Models
 {
@@ -8,6 +9,7 @@ namespace Turnos.Models
         {}
         public DbSet<Especialidad> Especialidad { get; set; }
         public DbSet<Paciente> Paciente { get; set; }
+        public DbSet<Medico> Medico { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {   
             modelBuilder.Entity<Especialidad>(entidad =>{
@@ -52,6 +54,47 @@ namespace Turnos.Models
                 .IsRequired()
                 .HasMaxLength(100)
                 .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Medico>(entity=>{
+
+                entity.ToTable("Medico");
+
+                entity.HasKey(x=>x.IdMedico);
+
+                entity.Property(x=>x.Nombre)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entity.Property(x=>x.Apellido)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entity.Property(x=>x.Direccion)
+                .IsRequired()
+                .HasMaxLength(250)
+                .IsUnicode(false);
+
+                entity.Property(x=>x.Telefono)
+                .IsRequired()
+                .HasMaxLength(20)
+                .IsUnicode(false);
+
+                entity.Property(x=>x.Email)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entity.Property(x=>x.HorarioAtencionDesde)
+                .IsRequired()
+                .IsUnicode(false);
+
+                entity.Property(x=>x.HorarioAtencionHasta)
+                .IsRequired()
+                .IsUnicode(false);
+
             });
         }
     }

@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Turnos.Models
 {
@@ -12,5 +13,6 @@ namespace Turnos.Models
         public string  Telefono{ get; set; }
         public string  Email{ get; set; }
         public DateTime HorarioAtencionDesde {get;set;}
+        public DateTime HorarioAtencionHasta {get;set;}
     }
 }
