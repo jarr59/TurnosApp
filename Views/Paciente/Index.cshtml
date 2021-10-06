@@ -1,0 +1,29 @@
+@model IEnumerable<Paciente>
+<h1>Lista de pacientes</h1>
+<a asp-action="Create">Nuevo</a>
+<div>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                <th>@Html.DisplayNameFor(model => model.Apellido)</th>
+                <th>@Html.DisplayNameFor(model => model.Direccion)</th>
+                <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.Apellido</td>
+                    <td>@item.Direccion</td>
+                    <td>@item.Telefono</td>
+                    <td>@item.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
