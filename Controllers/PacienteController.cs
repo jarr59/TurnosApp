@@ -79,7 +79,7 @@ namespace Turnos.Controllers
 
                 await _context.SaveChangesAsync();
 
-                RedirectToAction(nameof(Index));
+               return  RedirectToAction(nameof(Index));
             }
             return View(paciente);
         }

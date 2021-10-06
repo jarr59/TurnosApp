@@ -1,8 +1,11 @@
 @model Turnos.Models.Paciente
-<h4>Paciente</h4>
+
+<h1>Edicion del paciente</h1>
+
 <div>
-    <form asp-action="Create" method="post">
+    <form asp-action="Edit" method="post">
         <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="IdPaciente">
         <div>
             <label asp-for="Nombre"></label>
             <input asp-for="Nombre">
@@ -33,7 +36,4 @@
             <input type="submit" value="Grabar">
         </div>
     </form>
-</div>
-<div>
-    <a asp-action="Index">Volver</a>
 </div>

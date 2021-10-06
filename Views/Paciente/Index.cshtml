@@ -22,6 +22,10 @@
                     <td>@item.Direccion</td>
                     <td>@item.Telefono</td>
                     <td>@item.Email</td>
+                    <td>
+                        <a asp-route-id="@item.IdPaciente" asp-action="Details">Detalles</a>
+                        <a asp-route-id="@item.IdPaciente" asp-action="Delete">Eliminar</a>
+                    </td>
                 </tr>
             }
         </tbody>
