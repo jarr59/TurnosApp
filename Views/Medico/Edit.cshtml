@@ -52,6 +52,11 @@
                 <input asp-for="HorarioAtencionHasta" class="form-control" />
                 <span asp-validation-for="HorarioAtencionHasta" class="text-danger"></span>
             </div>
+            
+            <div class="form-group">
+                <label class="control-label"></label>
+                <select asp-items="ViewBag.ListaEspecialidades" name="IdEspecialidad" class="form-control"></select>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
