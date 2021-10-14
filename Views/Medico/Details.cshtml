@@ -9,64 +9,52 @@
 </head>
 <body>
 
+<h4>Detalles del médico</h4>
 <div>
-    <h4>Medico</h4>
+    <h4>Médico</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
+      <div class="row">
+    <div class="col s12 m6">
+      <div class="card hoverable blue darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><h5></h5><b>@Html.DisplayFor(model => model.Nombre), @Html.DisplayFor(model => model.Apellido)</h5></b></span>
+            <dl class="row">
+        <dt >
+            <h6></h6>@Html.DisplayNameFor(model => model.Direccion): @Html.DisplayFor(model => model.Direccion)</h6>
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Apellido)
+        <hr/>
+        <dt >
+            <h6></h6>@Html.DisplayNameFor(model => model.Telefono): @Html.DisplayFor(model => model.Telefono)</h6>
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Direccion)
+        <hr/>
+        <dt >
+            <h6></h6>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</h6>
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Telefono)
+        <hr/>
+        <dt >
+            <h6></h6>@Html.DisplayNameFor(model => model.HorarioAtencionDesde): @Html.DisplayFor(model => model.HorarioAtencionDesde)</h6>
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
+        <hr/>
+        <dt >
+            <h6></h6>@Html.DisplayNameFor(model => model.HorarioAtencionHasta): @Html.DisplayFor(model => model.HorarioAtencionHasta)</h6>
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HorarioAtencionDesde)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HorarioAtencionDesde)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HorarioAtencionHasta)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HorarioAtencionHasta)
-        </dd>
-        
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MedicoEspecialidad[0].Especialidad.Descripcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MedicoEspecialidad[0].Especialidad.Descripcion)
-        </dd>
     </dl>
+        </div>
+        <div class="card-action blue-grey darken-2"y>
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="IdMedico" />
+             <a class="btn waves-effect waves-light" asp-action="Edit" asp-route-id="@Model.IdMedico" name="action">Editar
+                <i class="material-icons right">send</i>
+            </a>
+            <a asp-action="Index" class="right">Volv er</a>
+        </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+        
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.IdMedico">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
 </body>
 </html>

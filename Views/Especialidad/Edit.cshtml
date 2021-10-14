@@ -1,22 +1,33 @@
 @model Turnos.Models.Especialidad 
 
-<h1>Especialida</h1>
+<h4>Edicion de Especialidad</h4>
 
-<div>
-    <form asp-action="Edit" method="POST" >
-        <div asp-validation-summary="ModelOnly"></div>
-        <input type="hidden" asp-for="IdEspecialidad">
-        <div>
-            <label asp-for="Descripcion"></label>
-            <input asp-for="Descripcion"/>
-            <span asp-validation-for="Descripcion"></span>
-        </div>
-        <div>
-            <input type="submit" value="Grabar">
-        </div>
-    </form>
-</div>
 
-<div>
-    <a asp-action="Index">Volver</a>
+<hr />
+<div class="row">
+    <div>
+        <form asp-action="Edit" class="col s12">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="IdEspecialidad" type="hidden" class="validate">
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input asp-for="Descripcion" type="text" class="validate">
+                    <label asp-for="Descripcion"></label>
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col s6 m6">
+                        <button class="btn waves-effect waves-light cyan accent-4" type="submit" name="action">Grabar
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                    <div class="col s6 m6">
+                        <a class="waves-effect waves-light btn grey darken-4"><i
+                                class="material-icons left ">undo</i>Volver</a>
+                    </div>
+                </div>
+        </form>
+    </div>
 </div>

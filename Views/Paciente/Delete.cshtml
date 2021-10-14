@@ -1,47 +1,46 @@
 @model Turnos.Models.Paciente
 
-<h1>¿Esta ustede seguro de eliminar el siguiente registro?</h1>
-
+<h4>Seguro desea eliminar el siguiente Paciente?</h4>
 <div>
-    <dl>
-        <dt>
-            @Html.DisplayNameFor(x=>x.Nombre)
-        </dt>
-        <dd>
-            @Html.DisplayFor(x=>x.Nombre)
-        </dd>
+    <h4>Paciente</h4>
+    <hr />
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card hoverable blue darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">
+                        <h5></h5><b>@Html.DisplayFor(model => model.Nombre), @Html.DisplayFor(model => model.Apellido)
+                            </h5></b>
+                    </span>
+                    <dl class="row">
+                        <dt>
+                            <h6></h6>@Html.DisplayNameFor(model => model.Direccion): @Html.DisplayFor(model =>
+                            model.Direccion)</h6>
+                        </dt>
+                        <hr />
+                        <dt>
+                            <h6></h6>@Html.DisplayNameFor(model => model.Telefono): @Html.DisplayFor(model =>
+                            model.Telefono)</h6>
+                        </dt>
+                        <hr />
+                        <dt>
+                            <h6></h6>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)
+                            </h6>
+                        </dt>
+                        <hr />
+                        </div>
+                        <div class="card-action blue-grey darken-2" y>
+                            <form asp-action="Delete">
+                                <input type="hidden" asp-for="IdPaciente" />
+                                <button class="btn waves-effect waves-light" type="submit"
+                                    asp-route-id="@Model.IdPaciente" name="action">Eliminar
+                                    <i class="material-icons right">send</i>
+                                </button>
+                                <a class=" btn waves-effect waves-light btn grey darken-4 right" asp-action="Index"><i class="material-icons left ">undo</i>Volver</a>
+                            </form>
+                 </div>
+        </div>
+      </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(x=>x.Apellido)
-        </dt>
-        <dd>
-            @Html.DisplayFor(x=>x.Apellido)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(x=>x.Direccion)
-        </dt>
-        <dd>
-            @Html.DisplayFor(x=>x.Direccion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(x=>x.Telefono)
-        </dt>
-        <dd>
-            @Html.DisplayFor(x=>x.Telefono)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(x=>x.Email)
-        </dt>
-        <dd>
-            @Html.DisplayFor(x=>x.Email)
-        </dd>
-    </dl>
-    <form asp-action="Delete" method="post">
-        <input type="hidden" asp-for="IdPaciente">
-        <input type="submit" value="Eliminar"> |
-        <input asp-action="Index" value="Volver">
-    </form>
-</div>
+  </div>

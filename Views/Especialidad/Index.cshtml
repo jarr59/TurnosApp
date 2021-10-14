@@ -1,29 +1,35 @@
 @model IEnumerable<Turnos.Models.Especialidad>
 <p>
-    <a asp-action="Create">Crear uno nuevo</a>
+    <a asp-action="Create" class="btn-floating btn-large green darken-1">
+        <i class="material-icons">person_add</i>
+    </a>
 </p>
-<table>
-    <thead>
+<table class="responsive-table highlight z-depth-3 blue lighten-5">
+    <thead class="blue darken-1 white-text">
         <tr>
             <th>
-                @Html.DisplayNameFor(x => x.IdEspecialidad)
+                @Html.DisplayNameFor(model => model.IdEspecialidad)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
             </th>
             <th>
-                @Html.DisplayNameFor(x => x.Descripcion)
+                Acciones
             </th>
+             <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEspecialidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+                      <td>
+                <a asp-action="Edit" asp-route-id="@item.IdEspecialidad">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdEspecialidad">Eliminar</a>
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.IdEspecialidad</td>
-                <td>@item.Descripcion</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdEspecialidad">Editar</a>
-                    <a asp-action="Delete" asp-route-id="@item.IdEspecialidad">Eliminar</a>
-                </td>
-            </tr>
         }
     </tbody>
-</table>
+    </table>
